@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+    privileged: true
+    devices:
+    - /dev/video0:/dev/video0
+  redis:
+    image: "redis:stretch"
